@@ -1,0 +1,48 @@
+{
+  "mqtt": {
+    "broker": "broker.hivemq.com",
+    "protocol": "mqtt",
+    "userName": "",
+    "password": "",
+    "clientId": "conectric"
+  },
+  "sensorMessages": {
+    "boot": {
+      "enabled": true,
+      "mqttTopic": "TODO"
+    },
+    "keepAlive": {
+      "enabled": false,
+      "mqttTopic": "TODO"
+    },
+    "motion": {
+      "enabled": true,
+      "mqttTopic": "TODO"
+    },
+    "motionStatus": {
+      "enabled": true,
+      "mqttTopic": "TODO"
+    },
+    "tempHumidity": {
+      "enabled": true,
+      "humidity": {
+        "enabled": true,
+        "mqttTopic": "TODO"
+      },
+      "temperature": {
+        "enabled": true,
+        "mqttTopic": "TODO",
+        "useFahrenheitTemps": true
+      }
+    },
+    "switch": {
+      "enabled": true,
+      "mqttTopic": "TODO",
+      "switchOpenValue": false
+    },
+    "switchStatus": {
+      "enabled": true,
+      "mqttTopic": "TODO"
+    }
+  }
+}
