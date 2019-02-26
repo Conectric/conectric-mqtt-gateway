@@ -13,7 +13,7 @@ if (sensorConfig.keepAlive.enabled) {
   configOptions.sendKeepAliveMessages = true
 }
 
-if (sensorConfig.tempHumidity.temperature.enabled && sensorConfig.tempHumidity.temperature.useFahrenheitTemps === false) {
+if (sensorConfig.tempHumidity.enabled && sensorConfig.tempHumidity.useFahrenheitTemps === false) {
   configOptions.useFahrenheitTemps = false
 }
 
@@ -56,9 +56,15 @@ gateway.runGateway({
   onSensorMessage: (sensorMessage) => {
     // Is this message type enabled?
     if (sensorConfig[sensorMessage.type].enabled) {
-      // TODO work out the MQTT topic, note tempHumidity is two message types...
-      // Should we connect to MQTT broker here, publish and drop or maintain a long connection?
+      const mqttTopic = sensorConfig[sensorMessage.type].mqttTopic
+
       console.log(sensorMessage)
+
+      mqttClient.publish(mqttTopic, JSON.stringify(sensorMessage), (err) => {
+        if (err) {
+          console.log(`Error publishing message: ${err}`)
+        }
+      })
     }
   }
 });

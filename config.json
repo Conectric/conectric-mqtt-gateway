@@ -4,45 +4,38 @@
     "protocol": "mqtt",
     "userName": "",
     "password": "",
-    "clientId": "conectric"
+    "clientId": "conectric-gateway-XXXXX"
   },
   "sensorMessages": {
     "boot": {
       "enabled": true,
-      "mqttTopic": "TODO"
+      "mqttTopic": "/conectric/boot"
     },
     "keepAlive": {
       "enabled": false,
-      "mqttTopic": "TODO"
+      "mqttTopic": "/conectric/keepAlive"
     },
     "motion": {
       "enabled": true,
-      "mqttTopic": "TODO"
+      "mqttTopic": "/conectric/motion"
     },
     "motionStatus": {
       "enabled": true,
-      "mqttTopic": "TODO"
+      "mqttTopic": "/conectric/motionStatus"
     },
     "tempHumidity": {
       "enabled": true,
-      "humidity": {
-        "enabled": true,
-        "mqttTopic": "TODO"
-      },
-      "temperature": {
-        "enabled": true,
-        "mqttTopic": "TODO",
+        "mqttTopic": "/conectric/tempHumidity",
         "useFahrenheitTemps": true
-      }
     },
     "switch": {
       "enabled": true,
-      "mqttTopic": "TODO",
+      "mqttTopic": "/conectric/switch",
       "switchOpenValue": false
     },
     "switchStatus": {
       "enabled": true,
-      "mqttTopic": "TODO"
+      "mqttTopic": "/conectric/switchStatus"
     }
   }
 }
